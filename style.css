@@ -1,148 +1,175 @@
-/* ===== Reset ===== */
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-/* ===== Body ===== */
-body {
     font-family: 'Poppins', sans-serif;
-    overflow-x: hidden;
-    background: linear-gradient(135deg, #141e30, #243b55);
-    color: #e0f7ff;
 }
 
-/* ===== Gradient Center Heading (ALL PAGES) ===== */
-h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 45px;
-    text-align: center;
-    margin-top: 40px;
-    letter-spacing: 4px;
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    padding: 20px;
+}
 
-    background: linear-gradient(90deg, #00f2fe, #4facfe, #00c6ff);
+/* ===============================
+   GRADIENT CENTER HEADING
+=================================*/
+
+h1 {
+    text-align: center;
+    font-size: 45px;
+    margin-top: 30px;
+    background: linear-gradient(90deg, #00f2fe, #4facfe, #00f2fe);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
-    text-shadow: 0 0 15px rgba(0, 242, 254, 0.5);
+    letter-spacing: 2px;
 }
 
 h2 {
     text-align: center;
-    margin-top: 10px;
-    font-weight: 400;
-    color: #ccefff;
-    letter-spacing: 2px;
+    font-size: 22px;
+    margin-bottom: 40px;
+    color: #dcdcdc;
 }
 
 h3 {
     text-align: center;
     margin-bottom: 20px;
-    color: white;
+    font-size: 22px;
+    color: #00f2fe;
 }
 
-/* ===== Container ===== */
+/* ===============================
+   CONTAINER & CARD DESIGN
+=================================*/
+
 .container {
     display: flex;
     justify-content: center;
-    gap: 40px;
     flex-wrap: wrap;
-    padding: 60px 20px;
-    position: relative;
-    z-index: 1;
+    gap: 30px;
 }
 
-/* ===== Card ===== */
 .card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    padding: 25px;
     width: 320px;
-    padding: 30px;
     border-radius: 20px;
-    backdrop-filter: blur(15px);
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255,255,255,0.2);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-    transition: 0.4s ease;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    transition: 0.3s;
 }
 
 .card:hover {
     transform: translateY(-10px);
 }
 
-/* ===== Button ===== */
+/* ===============================
+   BUTTON STYLE
+=================================*/
+
 .btn {
     display: block;
-    margin: 15px 0;
-    padding: 15px;
     text-decoration: none;
-    border-radius: 12px;
-    font-weight: 500;
-    letter-spacing: 1px;
+    background: linear-gradient(90deg, #00f2fe, #4facfe);
     color: white;
-    background: linear-gradient(45deg, #00c6ff, #0072ff);
-    transition: 0.4s;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
+    transform: scale(1.03);
 }
 
 .btn p {
     font-size: 14px;
     margin-top: 5px;
-    color: #e6faff;
 }
 
-.btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px #00c6ff;
-}
+/* ===============================
+   BACK BUTTON
+=================================*/
 
-/* ===== Back Button ===== */
 .back-btn {
-    display: inline-block;
-    margin: 20px;
-    padding: 10px 20px;
-    background: #ff4b2b;
-    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.back-btn a {
     text-decoration: none;
-    border-radius: 8px;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    background: linear-gradient(90deg, #ff512f, #dd2476);
+    color: white;
     transition: 0.3s;
 }
 
-.back-btn:hover {
-    background: #ff1e00;
+.back-btn a:hover {
+    background: linear-gradient(90deg, #dd2476, #ff512f);
 }
 
-/* ===== Bubble Background ===== */
+/* ===============================
+   SCREENSHOT HORIZONTAL
+=================================*/
+
+.screenshot-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.screenshot {
+    width: 250px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    transition: 0.3s;
+}
+
+.screenshot:hover {
+    transform: scale(1.05);
+}
+
+/* ===============================
+   BUBBLE BACKGROUND ANIMATION
+=================================*/
+
 .bubbles {
     position: fixed;
     width: 100%;
     height: 100%;
     overflow: hidden;
-    top: 0;
-    left: 0;
-    z-index: 0;
+    z-index: -1;
 }
 
 .bubbles span {
     position: absolute;
-    bottom: -150px;
+    width: 20px;
+    height: 20px;
+    background: rgba(255,255,255,0.1);
     border-radius: 50%;
-    background: radial-gradient(circle at 30% 30%,
-        rgba(255,255,255,0.8),
-        rgba(255,255,255,0.2) 40%,
-        rgba(255,255,255,0.05) 60%,
-        transparent 70%);
-    animation: floatUp linear infinite;
+    animation: animate 15s linear infinite;
 }
 
-.bubbles span:nth-child(1){ left:5%; width:100px; height:100px; animation-duration:25s;}
-.bubbles span:nth-child(2){ left:25%; width:70px; height:70px; animation-duration:18s;}
-.bubbles span:nth-child(3){ left:45%; width:130px; height:130px; animation-duration:30s;}
-.bubbles span:nth-child(4){ left:65%; width:80px; height:80px; animation-duration:20s;}
-.bubbles span:nth-child(5){ left:85%; width:110px; height:110px; animation-duration:28s;}
-.bubbles span:nth-child(6){ left:35%; width:90px; height:90px; animation-duration:22s;}
-.bubbles span:nth-child(7){ left:75%; width:120px; height:120px; animation-duration:27s;}
-.bubbles span:nth-child(8){ left:55%; width:60px; height:60px; animation-duration:17s;}
+.bubbles span:nth-child(1){ left:10%; animation-duration:8s; }
+.bubbles span:nth-child(2){ left:20%; animation-duration:12s; }
+.bubbles span:nth-child(3){ left:35%; animation-duration:10s; }
+.bubbles span:nth-child(4){ left:50%; animation-duration:7s; }
+.bubbles span:nth-child(5){ left:65%; animation-duration:9s; }
+.bubbles span:nth-child(6){ left:75%; animation-duration:11s; }
+.bubbles span:nth-child(7){ left:85%; animation-duration:6s; }
+.bubbles span:nth-child(8){ left:95%; animation-duration:13s; }
 
-@keyframes floatUp {
-    0% { transform: translateY(0); opacity: 0.9; }
-    100% { transform: translateY(-120vh); opacity: 0; }
+@keyframes animate {
+    0% { transform: translateY(100vh) scale(0); }
+    100% { transform: translateY(-10vh) scale(1); }
 }
