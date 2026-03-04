@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== Reset ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ===== Body ===== */
+body{
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+    background:linear-gradient(135deg,#141e30,#243b55);
+    color:#e0f7ff;
+}
+
+/* ===== Heading ===== */
+h1{
+    font-family:'Orbitron',sans-serif;
+    font-size:45px;
+    letter-spacing:3px;
+    text-align:center;
+    margin-top:40px;
+    background:linear-gradient(90deg,#00f2fe,#4facfe);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* ===== Container ===== */
+.container{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+    padding:60px 20px;
+    position:relative;
+    z-index:1;
+}
+
+/* ===== Card ===== */
+.card{
+    width:320px;
+    padding:30px;
+    border-radius:20px;
+    backdrop-filter:blur(15px);
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.2);
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+    transition:0.4s ease;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+/* ===== Text ===== */
+h2{
+    color:white;
+    margin-bottom:15px;
+}
+
+p{
+    color:#ccefff;
+    font-size:15px;
+    line-height:1.6;
+}
+
+/* ===== Button ===== */
+.btn{
+    display:block;
+    margin:20px 0;
+    padding:15px;
+    text-align:center;
+    text-decoration:none;
+    border-radius:12px;
+    font-weight:500;
+    letter-spacing:1px;
+    color:white;
+    background:linear-gradient(45deg,#00c6ff,#0072ff);
+    transition:0.4s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px #00c6ff;
+}
+
+/* ===== Gallery ===== */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    padding:40px;
+    position:relative;
+    z-index:1;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:15px;
+    transition:0.4s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+/* ===== Bubbles Background ===== */
+.bubbles{
+    position:fixed;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    top:0;
+    left:0;
+    z-index:0;
+}
+
+.bubbles span{
+    position:absolute;
+    bottom:-150px;
+    border-radius:50%;
+    background:radial-gradient(circle at 30% 30%,
+        rgba(255,255,255,0.8),
+        rgba(255,255,255,0.2) 40%,
+        rgba(255,255,255,0.05) 60%,
+        transparent 70%);
+    animation:floatUp linear infinite;
+}
+
+/* Bubble Sizes */
+.bubbles span:nth-child(1){ left:5%; width:100px; height:100px; animation-duration:25s;}
+.bubbles span:nth-child(2){ left:25%; width:70px; height:70px; animation-duration:18s;}
+.bubbles span:nth-child(3){ left:45%; width:130px; height:130px; animation-duration:30s;}
+.bubbles span:nth-child(4){ left:65%; width:80px; height:80px; animation-duration:20s;}
+.bubbles span:nth-child(5){ left:85%; width:110px; height:110px; animation-duration:28s;}
+
+@keyframes floatUp{
+    0%{transform:translateY(0); opacity:0.9;}
+    100%{transform:translateY(-120vh); opacity:0;}
+}
+
+</style>
+</head>
+<body>
+
+<h1>MY PORTFOLIO</h1>
+
+<div class="container">
+
+    <div class="card">
+        <h2>About Me</h2>
+        <p>I am a passionate developer creating modern and responsive web applications.</p>
+        <a href="#" class="btn">View Resume</a>
+    </div>
+
+    <div class="card">
+        <h2>Projects</h2>
+        <p>Explore my latest web development and design projects.</p>
+        <a href="#" class="btn">View Projects</a>
+    </div>
+
+    <div class="card">
+        <h2>Contact</h2>
+        <p>Let’s connect and build something amazing together.</p>
+        <a href="#" class="btn">Contact Me</a>
+    </div>
+
+</div>
+
+<!-- Bubble Background -->
+<div class="bubbles">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+</body>
+</html>
